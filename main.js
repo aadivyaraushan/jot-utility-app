@@ -1,4 +1,6 @@
 const {app, BrowserWindow} = require('electron');
+const Store = require('electron-store');
+
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 400,
@@ -13,7 +15,11 @@ const createWindow = () => {
         title: 'Working Memory',
         icon: './images/clipboard-light-mode.ico',
         autoHideMenuBar: true,
-        frame: false
+        frame: true,
+        webPreferences: {
+            preload: __dirname + '/preload.js',
+            nodeIntegration: true
+        }
     })
 
     win.loadFile('index.html')
@@ -25,6 +31,7 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
     createWindow();
+    Store.initRenderer();
 
     app.on('activate', () => {
         if(BrowserWindow.getAllWindows().length === 0) createWindow();
