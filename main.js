@@ -12,10 +12,10 @@ const createWindow = () => {
         minimizable: false,
         maximizable: false,
         fullscreenable: false,
-        title: 'Working Memory',
-        icon: './images/clipboard-light-mode.ico',
+        title: 'Jot',
         autoHideMenuBar: true,
-        frame: true,
+        icon: 'images/exe-icon.png',
+        frame: false,
         webPreferences: {
             preload: __dirname + '/preload.js',
             nodeIntegration: true

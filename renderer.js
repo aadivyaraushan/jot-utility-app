@@ -1,10 +1,6 @@
 
-
 document.getElementById('closeButton').addEventListener('click', function () {
-    const text = document.getElementById('inputBox').value;
-    console.log(text);
-    store.set('inputData', text);
-    console.log(store.get('inputData'));
+    store.set('inputData', document.getElementById('inputBox').value);
     window.close();
 });
 
@@ -14,5 +10,6 @@ window.onload = function () {
     } else {
         document.getElementById('crossIcon').setAttribute('src', 'images/cross-light-mode.png');
     }
-    document.getElementById('inputBox').value = store.get('inputData') === undefined ? '' : store.get('inputData')
+    const textarea = document.getElementById('inputBox');
+    textarea.value = store.get('inputData') === undefined ? '' : store.get('inputData');
 }

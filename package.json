@@ -1,19 +1,30 @@
 {
-  "name": "working-memory-app",
+  "name": "Jot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Utility always-on-top app to use as quick capture/reminders/notes, etc.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "author": "Aadivya Raushan",
   "license": "MIT",
   "devDependencies": {
+    "@electron-forge/cli": "^6.1.0",
+    "@electron-forge/maker-deb": "^6.1.0",
+    "@electron-forge/maker-rpm": "^6.1.0",
+    "@electron-forge/maker-squirrel": "^6.1.0",
+    "@electron-forge/maker-zip": "^6.1.0",
+    "@electron-forge/publisher-github": "^6.1.0",
     "electron": "^23.2.1",
     "tailwindcss": "^3.3.1"
   },
   "dependencies": {
+    "easymde": "^2.18.0",
+    "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.1.0"
   }
 }
